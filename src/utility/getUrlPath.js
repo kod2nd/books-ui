@@ -1,4 +1,4 @@
-const getUrlPath = (path = '/') => {
+export const getUrlPath = (path = '/') => {
   const localhost = `http://localhost:3000${path}`
   
   if (process.env.REACT_APP_BOOKS_API) {
@@ -6,4 +6,4 @@ const getUrlPath = (path = '/') => {
   } return localhost
 }
 
-module.exports = getUrlPath
+// export default getUrlPath
