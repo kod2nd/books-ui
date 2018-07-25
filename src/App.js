@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import getUrlPath from './getUrlPath'
 
 class App extends Component {
   constructor() {
@@ -9,8 +10,10 @@ class App extends Component {
     }
   }
 
+  
+
   async getBooks() {
-    const response = await fetch( process.env.REACT_APP_BOOKS_API ||'http://localhost:3000/books')
+    const response = await fetch(process.env.REACT_APP_BOOKS_API || getUrlPath('books'))
     const data = await response.json()
     this.setState({
       books: data
