@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import getUrlPath from './getUrlPath'
+import {getUrlPath} from '../src/utility/getUrlPath'
+import Authors from './Authors'
+import Books from './Books'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      books: []
+      books: [],
+      authors: [],
     }
   }
-
-  
 
   async getBooks() {
     const response = await fetch(getUrlPath('/books'))
@@ -20,12 +21,19 @@ class App extends Component {
     })
   }
 
+
+
+  mapArray(array, attribute) {
+    return array.map(element => {
+      return <li key={element._id}>{element[attribute]}</li>
+    })
+  }
+
   render() {
     return (
       <div>
-        {this.state.books.map(book => {
-          return <li key={book._id}>{book.title}</li>
-        })}
+        <Authors />
+        <Books />
       </div>
     );
   }
