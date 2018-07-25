@@ -13,7 +13,7 @@ class App extends Component {
   
 
   async getBooks() {
-    const response = await fetch(process.env.REACT_APP_BOOKS_API || getUrlPath('books'))
+    const response = await fetch(getUrlPath('/books'))
     const data = await response.json()
     this.setState({
       books: data
