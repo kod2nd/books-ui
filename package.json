@@ -16,11 +16,5 @@
   },
   "devDependencies": {
     "jest-fetch-mock": "^1.6.5"
-  },
-  "jest": {
-    "automock": false,
-    "setupFiles": [
-      "./setupJest.js"
-    ]
   }
 }

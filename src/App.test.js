@@ -14,6 +14,6 @@ test('App should match snapshot', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<App />)
   const output = renderer.getRenderOutput()
-  console.log(output)
+  // console.log(output)
   expect(output).toMatchSnapshot()
 });
